@@ -28,7 +28,7 @@ if(RDK_BUILD_MINIMAL_LIB)
     add_executable(RDKit_minimal jswrapper.cpp minilib.cpp)
     target_link_libraries(RDKit_minimal ${MINIMAL_LIB_LIBRARIES})
 
-    set_target_properties(RDKit_minimal PROPERTIES LINK_FLAGS "--bind")
+    set_target_properties(RDKit_minimal PROPERTIES LINK_FLAGS "-lembind --embind-emit-tsd RDKit_minimal.d.ts")
 endif(RDK_BUILD_MINIMAL_LIB)
 
 if(RDK_BUILD_CFFI_LIB)
